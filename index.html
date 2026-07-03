@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snack Shack</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ffd34f'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial' font-size='20' font-weight='700' fill='%23211b17'%3ESS%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#menu" aria-label="Snack Shack menu">
+      <span class="brand-mark">SS</span>
+      <span>Snack Shack</span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#menu">Menu</a>
+      <a href="#pickup">Pickup</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-jump" type="button" data-scroll-target="cart" aria-label="Go to cart">
+      Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="menu-intro" id="menu" aria-labelledby="menuTitle">
+      <div>
+        <p class="eyebrow">Open today at lunch</p>
+        <h1 id="menuTitle">Pick a snack. Text the order. Grab it at school.</h1>
+        <p class="intro-copy">Simple menu, clear prices, and no ordering drama.</p>
+      </div>
+      <div class="quick-info" aria-label="Quick pickup information">
+        <strong>Pickup:</strong> outside Room 214 after 4th period
+      </div>
+    </section>
+
+    <section class="shop-layout" aria-label="Snack ordering area">
+      <div class="menu-grid" id="menuGrid" aria-label="Snack menu"></div>
+
+      <aside class="cart-panel" id="cart" aria-labelledby="cartTitle">
+        <div class="cart-heading">
+          <div>
+            <p class="eyebrow">Your order</p>
+            <h2 id="cartTitle">Cart</h2>
+          </div>
+          <button class="ghost-button" type="button" id="clearCart">Clear</button>
+        </div>
+
+        <div class="cart-items" id="cartItems" aria-live="polite"></div>
+
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">$0.00</strong>
+        </div>
+
+        <a class="primary-action disabled" id="textOrder" href="#" aria-disabled="true">Text order</a>
+        <button class="secondary-action" type="button" id="copyOrder">Copy order</button>
+        <p class="cart-note" id="cartNote">Add something from the menu to start.</p>
+      </aside>
+    </section>
+
+    <section class="info-band" id="pickup" aria-labelledby="pickupTitle">
+      <div>
+        <p class="eyebrow">Pickup spot</p>
+        <h2 id="pickupTitle">Outside Room 214</h2>
+        <p>Meet by the blue lockers after 4th period or during lunch. Bring cash or ask about pay apps when you text.</p>
+      </div>
+      <div class="info-actions">
+        <button type="button" id="copyPickup">Copy pickup info</button>
+        <a href="https://www.google.com/maps/search/?api=1&query=Room%20214%20school%20blue%20lockers" target="_blank" rel="noopener">Open map search</a>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact" aria-labelledby="contactTitle">
+      <div>
+        <p class="eyebrow">Questions?</p>
+        <h2 id="contactTitle">Text or email the Snack Shack</h2>
+      </div>
+      <div class="contact-links">
+        <a href="sms:+15550143782">Text: (555) 014-3782</a>
+        <a href="mailto:snackshack@studentmail.example?subject=Snack%20Shack%20Question">snackshack@studentmail.example</a>
+        <button type="button" id="shareMenu">Share menu</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
